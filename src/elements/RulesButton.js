@@ -17,7 +17,7 @@ const ButtonContainer = styled.div`
     justify-content: end;
     position: absolute;
     bottom: 0;
-
+    z-index: 500;
     @media (max-width: 480px){
         justify-content: center;
     }

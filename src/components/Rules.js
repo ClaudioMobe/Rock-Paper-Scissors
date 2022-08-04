@@ -37,7 +37,7 @@ const ModContainer = styled.div`
     justify-content: center;
     align-items: center;
     background: rgba(0,0,0,0.5);
-    z-index: 200;
+    z-index: 500;
 `;
 
 const RulesContainer = styled.div`

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import Choice from '../elements/Choice';
+import GameContent from '../elements/GameContent';
 import {ReactComponent as Icon} from '../assets/bg-triangle.svg';
 import { UserSelectionContext } from '../contexts/UserSelectionContext';
 
@@ -10,10 +10,8 @@ const Game = () => {
     return (
         <MasterFlex>
             <GameContainer>
-                <GameBackground/>
-                <Choice name='rock'/>
-                <Choice name='paper'/>
-                <Choice name='scissors'/>
+                <GameBackground userSelection={userSelection}/>
+                <GameContent/>
             </GameContainer>
         </MasterFlex>
     );
@@ -35,6 +33,7 @@ const GameContainer = styled.div`
     align-items: center;
     width: 650px;
     height: 550px;
+    position: relative;
     transition: ease all 1s;
 
     @media (max-width: 480px){
@@ -45,12 +44,15 @@ const GameContainer = styled.div`
 `;
 
 const GameBackground = styled(Icon)`
-    scale: 1.12;
+    scale: ${props => props.userSelection.length===0 ? '1.12' : '0.1'};
     position: absolute;
     align-self: center;
+    transform: ${props => props.userSelection.length===0 ? 'rotate(0)' : 'rotate(360deg)'};
+    opacity: ${props => props.userSelection.length===0 ? '1' : '0'};
+    transition: linear all 0.5s;
 
     @media (max-width: 480px){
-        scale: 0.7;
+        scale: ${props => props.userSelection.length===0 ? '0.7' : '0.1'};
     }
 `;
  
