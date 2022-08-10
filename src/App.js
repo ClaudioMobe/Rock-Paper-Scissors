@@ -3,21 +3,27 @@ import styled from 'styled-components';
 import Rules from './components/Rules';
 import { RulesProvider } from './contexts/RulesContext';
 import { UserSelectionProvider } from './contexts/UserSelectionContext';
+import { HouseSelectionProvider } from './contexts/HouseSelectionContext';
 import Game from './components/Game';
 import Header from './elements/Header';
 import RulesButton from './elements/RulesButton';
+import { ScoreProvider } from './contexts/ScoreContext';
 
 const App = () => {
   return ( 
     <RulesProvider>
-    <UserSelectionProvider>
-      <AppContainer>
-        <Header/>
-        <RulesButton/>
-        <Rules/>
-        <Game/>
-      </AppContainer>
-    </UserSelectionProvider>
+      <ScoreProvider>
+        <UserSelectionProvider>
+          <HouseSelectionProvider>
+            <AppContainer>
+              <Header/>
+              <RulesButton/>
+              <Rules/>
+              <Game/>
+            </AppContainer>
+          </HouseSelectionProvider>
+        </UserSelectionProvider>
+      </ScoreProvider>
     </RulesProvider>
    );
 }

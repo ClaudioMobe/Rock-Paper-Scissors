@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import LogoImg from '../assets/logo.svg';
+import { ScoreContext } from '../contexts/ScoreContext';
 
 const Header = () => {
-    const [score, setScore] = useState(0);
+    const {score, setScore} = useContext(ScoreContext);
 
     return (
         <HeaderContainer>
