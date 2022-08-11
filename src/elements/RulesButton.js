@@ -37,5 +37,10 @@ const Button = styled.button`
         color: #fefefe;
         border: 2px solid hsl(217, 16%, 70%);
     }
+
+    @media (max-width: 480px){
+        padding: 5px 20px;
+        font-size: 14px;
+    }
 `;
 export default RulesButton;

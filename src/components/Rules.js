@@ -6,7 +6,6 @@ import { RulesContext } from '../contexts/RulesContext';
 
 const Rules = () => {
     const {showMod, closeRules} = useContext(RulesContext);
-    console.log(showMod);
     return (
         showMod && 
             <ModContainer>
@@ -37,7 +36,7 @@ const ModContainer = styled.div`
     justify-content: center;
     align-items: center;
     background: rgba(0,0,0,0.5);
-    z-index: 500;
+    z-index: 7000;
 `;
 
 const RulesContainer = styled.div`

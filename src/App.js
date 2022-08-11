@@ -8,6 +8,8 @@ import Game from './components/Game';
 import Header from './elements/Header';
 import RulesButton from './elements/RulesButton';
 import { ScoreProvider } from './contexts/ScoreContext';
+import { IsChosenProvider } from './contexts/IsChosenContext';
+import { DecisionProvider } from './contexts/DecisionContext';
 
 const App = () => {
   return ( 
@@ -15,12 +17,16 @@ const App = () => {
       <ScoreProvider>
         <UserSelectionProvider>
           <HouseSelectionProvider>
-            <AppContainer>
-              <Header/>
-              <RulesButton/>
-              <Rules/>
-              <Game/>
-            </AppContainer>
+              <IsChosenProvider>
+                <DecisionProvider>
+                          <AppContainer>
+                            <Header/>
+                            <RulesButton/>
+                            <Rules/>
+                            <Game/>
+                          </AppContainer>
+                </DecisionProvider>          
+              </IsChosenProvider>
           </HouseSelectionProvider>
         </UserSelectionProvider>
       </ScoreProvider>

@@ -4,7 +4,7 @@ import LogoImg from '../assets/logo.svg';
 import { ScoreContext } from '../contexts/ScoreContext';
 
 const Header = () => {
-    const {score, setScore} = useContext(ScoreContext);
+    const {score} = useContext(ScoreContext);
 
     return (
         <HeaderContainer>
